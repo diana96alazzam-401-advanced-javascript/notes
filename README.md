@@ -22,7 +22,7 @@ i.e.
 
 #### How to initialize/run your application (where applicable)
 
-- e.g. `npm start`
+- `node index.js --a 'add a note here'` or `node index.js --add 'add a note here'`
 
 #### How to use your library (where applicable)
 
