@@ -7,7 +7,8 @@
     "lib": "lib"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "eslint '**/*.js'"
   },
   "repository": {
     "type": "git",
@@ -21,6 +22,7 @@
   },
   "homepage": "https://github.com/diana96alazzam-401-advanced-javascript/notes#readme",
   "dependencies": {
+    "eslint": "^7.0.0",
     "minimist": "^1.2.5",
     "uuid": "^8.0.0"
   }
