@@ -22,15 +22,14 @@ i.e.
 
 #### How to initialize/run your application (where applicable)
 
-- `node index.js --a 'add a note here'` or `node index.js --add 'add a note here'`
+- `node index.js -a 'add a note here'` or `node index.js --add 'add a note here'`
 
 #### How to use your library (where applicable)
 
 #### Tests
 
-- How do you run tests?
-- Any tests of note?
-- Describe any tests that you did not complete, skipped, etc
+- `npm run lint`
+- `npm test`
 
 #### UML
 
