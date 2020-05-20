@@ -1,28 +1,37 @@
 'use strict';
 
+const mongoose = require('mongoose');
+
 const Input = require('./lib/input.js');
 const Note = require('./lib/notes.js');
 
 const noteInstance = new Input();
 const note = new Note(noteInstance);
 
-noteInstance.valid() ? note.execute(noteInstance): '';
+
+mongoose.connect(process.env.MONGODB_URI, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+});
+
+console.log(noteInstance);
+
+if ((noteInstance.action === 'add') || (noteInstance.action === 'a')) {
+  noteInstance.valid() ? note.add(noteInstance).then(mongoose.disconnect): help();
+} else if ((noteInstance.action === 'list')) {
+  noteInstance.valid() ? note.list(noteInstance).then(mongoose.disconnect): help();
+} else if ((noteInstance.action === 'delete')) {
+  noteInstance.valid() ? note.delete(noteInstance): help();
+}
 
 
-/*
-  I would normally do it this way
-  but the submission instructions ask for nothing to be console logged when there is no command
-  and it didn't specify if the user specified wrong action or payload 
-*/
 
 
-// noteInstance.valid() ? note.execute(noteInstance) : help();
-
-// function help() {
-//   console.log(`
-//     Note app USAGE:
-//      -a <your note here>
-//      --add <your note here>
-//     `);
-//   process.exit();
-// }
+function help() {
+  console.log(`
+    Note app USAGE:
+     -a <your note here>
+     --add <your note here>
+    `);
+  process.exit();
+}

@@ -22,8 +22,10 @@
   },
   "homepage": "https://github.com/diana96alazzam-401-advanced-javascript/notes#readme",
   "dependencies": {
+    "dotenv": "^8.2.0",
     "eslint": "^7.0.0",
     "minimist": "^1.2.5",
+    "mongoose": "^5.9.15",
     "uuid": "^8.0.0"
   },
   "devDependencies": {
