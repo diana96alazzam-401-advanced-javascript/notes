@@ -1,5 +1,5 @@
 'use strict';
-
+require('dotenv').config();
 const mongoose = require('mongoose');
 
 const Input = require('./lib/input.js');
@@ -14,10 +14,8 @@ mongoose.connect(process.env.MONGODB_URI, {
   useUnifiedTopology: true,
 });
 
-console.log(noteInstance);
-
 if ((noteInstance.action === 'add') || (noteInstance.action === 'a')) {
-  noteInstance.valid() ? note.add(noteInstance).then(mongoose.disconnect): help();
+  noteInstance.valid() ? note.save(noteInstance).then(mongoose.disconnect): help();
 } else if ((noteInstance.action === 'list')) {
   noteInstance.valid() ? note.list(noteInstance).then(mongoose.disconnect): help();
 } else if ((noteInstance.action === 'delete')) {
