@@ -13,7 +13,13 @@
 
 #### How to initialize/run your application (where applicable)
 
-- `node index.js --a 'add a note here'` or `node index.js --add 'add a note here'`
+- `node index.js -a 'add a note here'` or `node index.js --add 'add a note here'`
+
+
+#### Tests
+
+- `npm run lint`
+- `npm test`
 
 
 #### UML
