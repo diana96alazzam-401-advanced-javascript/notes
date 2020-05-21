@@ -30,8 +30,11 @@ if ((noteInstance.action === 'add') || (noteInstance.action === 'a')) {
 function help() {
   console.log(`
     Note app USAGE:
-     -a <your note here>
-     --add <your note here>
+     -a <your note here> --category <add category name> 
+     --add <your note here> --category <add category name> 
+     --list 
+     --list <add category name> 
+     --delete <add id> 
     `);
   process.exit();
 }
