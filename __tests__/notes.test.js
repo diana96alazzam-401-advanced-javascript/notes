@@ -1,10 +1,9 @@
 'use strict';
 const Note = require('../lib/notes.js');
 
-
 jest.spyOn(global.console, 'log');
 
-describe('Note Module', () => {
+xdescribe('Note Module', () => {
   it('does nothing when no command is given', ()=> {
     const noteInstance = {};
     const note = new Note(noteInstance);
